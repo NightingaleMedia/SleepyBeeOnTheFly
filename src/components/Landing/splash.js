@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react"
-
 import { Button, Col } from "react-bootstrap"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 import LandingLogo from "./landingLogo"
-import Banner from "./banner"
+
 const SplashPage = styled.div`
   height: 100vh;
   display: flex;

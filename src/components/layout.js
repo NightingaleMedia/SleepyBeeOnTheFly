@@ -16,7 +16,6 @@ import "./bootstrap.min.css"
 import "./normalize.css"
 import "./global.css"
 
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -30,18 +29,14 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Sleepy Bee On The Fly`} />
-   
-       {children}
-        <Footer/>
-       
-      
+      <Header
+        siteTitle={data.site.siteMetadata?.title || `Sleepy Bee On The Fly`}
+      />
+
+      {children}
+      <Footer />
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
