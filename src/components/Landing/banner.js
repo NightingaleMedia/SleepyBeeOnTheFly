@@ -17,7 +17,7 @@ const Banner = styled.div`
   width: 100%;
   height: 50px;
   margin-bottom: 70vh;
-  font-size: 40%;
+  font-size: 100%;
   line-height: auto;
   color: white;
   font-family: Foco;

@@ -26,8 +26,8 @@ const Bg = props => {
 
 const BackgroundImage = styled(Bg)`
   position: absolute;
-
-  height: 100vh;
+  display: none;
+  height: 100%;
   z-index: 99;
 `
 

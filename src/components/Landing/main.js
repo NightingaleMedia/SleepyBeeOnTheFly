@@ -2,35 +2,35 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Img from "gatsby-image"
-
+import { Col, Container, Row } from "react-bootstrap"
 import BackgroundImage from "./background-img"
 
 const MainDiv = styled.div`
-  height: 100vh;
   width: 100%;
   transition: height 0.2s ease;
-  background-color: rgba(5, 100, 180, 0.85);
-  overflow: hidden;
+  background-color: var(--sb-blue--dark);
+
   z-index: 100;
-  position: absolute;
-  padding: 2em;
+  position: relative;
+  padding: 6rem;
   color: white;
-  h2 {
-    font-size: 2em;
-  }
+
   .main-inner {
-    max-width: 45%;
+    max-width: 100%;
+    margin-top: 4rem;
   }
   @media all and (max-width: 900px) {
-    padding: 50px;
+    height: auto;
+
+    padding: 30px;
     div.main-inner {
       max-width: 100%;
     }
     h2 {
-      font-size: 50px;
+      font-size: 180%;
     }
     p {
-      font-size: 24px;
+      font-size: 120%;
     }
   }
 `
@@ -38,22 +38,37 @@ const MainDiv = styled.div`
 export default props => (
   <>
     <MainDiv mainHeight={props.mainHeight}>
-      <div className="main-inner">
-        <h2>On The Fly, Now Taking Orders!</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-      </div>
-      <iframe
-        width="600"
-        height="450"
-        frameborder="0"
-        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ5RKvelCxQYgRhc0aKYQLyGM&key=AIzaSyD_xrL9e1VO7FrrfjDEXKrIRM0IYUxO4qo"
-        allowfullscreen
-      />
+      <Container fluid>
+        <Row>
+          <Col md={6}>
+            <div className="main-inner">
+              <h2 className="white">
+                On The Fly, Now Taking Carry Out & Delivery Orders!
+              </h2>
+              <p>
+                Sleepy Bee On The Fly is a breakfast and lunch restaurant
+                uniting quality, flavor and speed. Like the Sleepy Bee Cafe, On
+                The Fly features fresh, healthy, locally sourced ingredients
+                made-to-order for grab and go, delivery, or to sit and savor for
+                a few precious minutes – whatever suits your busy, buzzy lives.
+              </p>
+            </div>
+          </Col>
+          <Col md={6}>
+            <div className="main-inner">
+              <iframe
+                width="100%"
+                height="600"
+                frameborder="0"
+                style={{ border: "0" }}
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD_xrL9e1VO7FrrfjDEXKrIRM0IYUxO4qo
+    &q=Sleepy+bee+on+the+fly,Cincinnati+OH"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </MainDiv>
     <BackgroundImage></BackgroundImage>
   </>

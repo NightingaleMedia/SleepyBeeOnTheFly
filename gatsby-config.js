@@ -11,7 +11,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/images/`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -33,7 +33,16 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
-
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        // username: `1320217635`,
+        username: `15776746060`,
+        access_token: `IGQVJXN2VPTVJQZAXZAqVkFOeGN5WElxYURWd05DMHg3TTBDbEg5OGlkVVV4OVVsdUh2ZAlduZAHNneGZA1X0pBTzVfMnNWUTh2RU1rTHpaOFQyU3BycU0tS2YtMllVX1U5MmI4dWpUUGtyN1FjNHhWR0k3OEtiTlEzbVpldkJB`,
+        // instagra_id: `17841400769070628`,
+        // instagram_id:
+      },
+    },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

@@ -1,0 +1,16 @@
+.insta-image {
+  margin: auto;
+  height: 370px;
+  width: 370px;
+  margin-top: 1.75rem;
+}
+p.insta-caption {
+  margin: auto;
+  font-size: 16px;
+  margin-bottom: 2rem;
+
+  margin-top: 1rem;
+  max-width: 300px;
+
+  color: gray;
+}

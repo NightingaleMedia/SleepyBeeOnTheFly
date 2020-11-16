@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import Link from "gatsby"
 
 const Footer = styled.div`
   height: 40vh;
@@ -19,5 +20,13 @@ export default () => (
     3440 Burnet Ave, Suite 100 <br />
     Cincinnati, OH 45229 <br />
     <strong> 513-221-1307</strong>
+    <br />
+    From Your Friends at{" "}
+    <a
+      style={{ color: "white", textDecoration: "underline" }}
+      href="https://www.sleepybeecafe.com/"
+    >
+      Sleepy Bee Cafe
+    </a>
   </Footer>
 )
