@@ -23,6 +23,7 @@
   --sb-font2: Questa-slab, sans-serif;
   --sb-font-foco: Foco, sans-serif;
   --sb-grey: #58575a;
+  --mini-menu-size: 50px;
 }
 
 h1,
@@ -36,7 +37,16 @@ h6 {
   font-size: 4rem;
   line-height: auto;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
 
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 body,
 html {
   font-family: Foco;

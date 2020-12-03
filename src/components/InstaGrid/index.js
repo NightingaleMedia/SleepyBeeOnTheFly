@@ -39,7 +39,7 @@ const InstaGrid = props => {
           {allInstaNode.edges.map(img => (
             <Col lg={4}>
               <Img
-                style={{ borderRadius: "3px" }}
+                style={{ borderRadius: "3wpx" }}
                 className="insta-image"
                 fluid={img.node.localFile.childImageSharp.fluid}
               />

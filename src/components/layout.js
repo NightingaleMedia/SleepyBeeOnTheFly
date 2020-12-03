@@ -8,14 +8,20 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import styled from "styled-components"
 import Header from "./header"
 import Footer from "./footer"
 
 import "./bootstrap.min.css"
 import "./normalize.css"
 import "./global.css"
+import { Helmet } from "react-helmet"
 
+const Wrap = styled.div`
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+`
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -29,6 +35,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <script src="https://apis.google.com/js/api.js"></script>
+      </Helmet>
+
       <Header
         siteTitle={data.site.siteMetadata?.title || `Sleepy Bee On The Fly`}
       />

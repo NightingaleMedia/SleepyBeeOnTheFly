@@ -4,7 +4,8 @@ module.exports = {
     description: `Sleepy Bee On The Fly Restaurant.`,
     author: `@Nightingale Media`,
   },
-  pathPrefix: `${__dirname}/sleepybee/sleepybeeonthefly`,
+  assetPrefix: `https://sleepybeeonthefly.com/`,
+
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

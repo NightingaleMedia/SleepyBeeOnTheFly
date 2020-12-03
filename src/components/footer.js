@@ -4,6 +4,9 @@ import styled from "styled-components"
 import Link from "gatsby"
 
 const Footer = styled.div`
+  width: 100vw;
+
+  bottom: 0;
   height: 40vh;
   background-color: var(--sb-grey);
   z-index: 2;

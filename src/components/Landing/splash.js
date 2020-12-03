@@ -1,3 +1,4 @@
+import { Link, navigate } from "gatsby"
 import React, { useEffect, useState } from "react"
 import { Button, Col } from "react-bootstrap"
 import styled from "styled-components"
@@ -37,8 +38,8 @@ const SplashPage = styled.div`
 `
 
 const ButtonHolder = styled.div`
-  max-width: 500px;
-  min-width: 500px;
+  max-width: 400px;
+  min-width: 400px;
   z-index: 201;
   max-height: 60px;
   display: flex;
@@ -48,15 +49,15 @@ const ButtonHolder = styled.div`
   transition: all 0.2s ease;
   &&.after-scroll {
     top: 0%;
+    max-height: 80px;
     position: fixed;
     margin-top: 0;
     min-width: 100%;
     z-index: 101;
+    box-shadow: 0px 0px 20px 0px #181818;
     && Button {
-      background-color: var(--sb-blue--dark);
       /* chnage this for the scroll */
-      box-shadow: 0px 0px 20px 0px #181818;
-      width: 100%;
+      width: 80%;
       border-radius: 0;
       height: 80px;
     }
@@ -68,22 +69,21 @@ const ButtonHolder = styled.div`
   }
   Button {
     background-color: var(--sb-blue--dark);
-
-    min-width: 40%;
+    height: 50px;
+    min-width: 35%;
     cursor: pointer;
   }
   Button:nth-of-type(1) {
     background-color: var(--sb-blue--dark);
     border: none;
-    box-shadow: 0px 0px 0px 0px #181818;
     transition: opacity 0.2s;
     :hover {
       opacity: 0.98;
     }
   }
   Button:nth-of-type(2) {
-    background-color: var(--sb-blue--dark);
-    border-color: var(--sb-blue--dark);
+    background-color: #181818;
+    border: none;
     transition: opacity 0.2s;
     :hover {
       opacity: 0.8;
@@ -99,7 +99,6 @@ const Splash = props => {
   }
   const handleFixedNav = e => {
     if (window.pageYOffset > (window.innerHeight + 100) / 2) {
-      console.log(window)
       setFixedNav(true)
     } else setFixedNav(false)
   }
@@ -109,7 +108,7 @@ const Splash = props => {
       handleLax()
       handleFixedNav()
     })
-    return window.removeEventListener("scroll", handleLax)
+    return () => window.removeEventListener("scroll", handleLax)
   }, [])
   return (
     <SplashPage>
@@ -128,7 +127,14 @@ const Splash = props => {
         >
           Order Online{" "}
         </Button>
-        {/* <Button>See The Menu</Button> */}
+
+        <Button
+          onClick={() => {
+            navigate("/menu")
+          }}
+        >
+          Our Menu
+        </Button>
       </ButtonHolder>
       <div className="splash-under">
         <p style={{ lineHeight: "30px" }}>
