@@ -37,7 +37,7 @@ const MainDiv = styled.div`
 
 export default props => (
   <>
-    <MainDiv mainHeight={props.mainHeight}>
+    <MainDiv mainHeight={props.mainHeight} id="about">
       <Container fluid>
         <Row>
           <Col md={6}>

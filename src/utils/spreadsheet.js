@@ -1,6 +1,6 @@
 import config from "../components/Menu/config"
 import { gapi } from "gapi-script"
-
+import Menu from "../pages/menu"
 export function getCarryOut(callback) {
   gapi.client.load("sheets", "v4", () => {
     gapi.client.sheets.spreadsheets.values
@@ -10,7 +10,7 @@ export function getCarryOut(callback) {
       })
       .then(
         res => {
-          callback({ section: "CarryOut", data: res.result.values })
+          callback({ section: "Carryout", data: res.result.values }, null, null)
         },
         res => {
           callback(false, res.result.error)
@@ -18,7 +18,6 @@ export function getCarryOut(callback) {
       )
   })
 }
-
 export function getDrinks(callback) {
   gapi.client.load("sheets", "v4", () => {
     gapi.client.sheets.spreadsheets.values
@@ -28,7 +27,7 @@ export function getDrinks(callback) {
       })
       .then(
         res => {
-          callback({ section: "Drinks", data: res.result.values })
+          callback({ section: "Drinks", data: res.result.values }, null, null)
         },
         res => {
           callback(false, res.result.error)
@@ -37,20 +36,30 @@ export function getDrinks(callback) {
   })
 }
 
-export function load(callback) {
-  gapi.client.load("sheets", "v4", () => {
-    gapi.client.sheets.spreadsheets.values
-      .get({
-        spreadsheetId: config.spreadsheetId,
-        range: "DRINKS!A1:G60",
+export const mapItems = packet => {
+  let menuMap = []
+
+  packet.data.map(item => {
+    //this means it is a title section
+    if (item[0] !== "") {
+      menuMap.push({
+        section: packet.section || "",
+        type: "title",
+        title: item[0] || "item title",
+        description: item[3] || "",
       })
-      .then(
-        res => {
-          callback(res.result.values)
-        },
-        res => {
-          callback(false, res.result.error)
-        }
-      )
+      //this checks for if its a menu item
+    } else if (item[6] === "TRUE") {
+      menuMap.push({
+        section: packet.section || "",
+        type: "item",
+        title: item[1] || "",
+        dietaryNotes: item[2].split(","),
+        description: item[3] || "",
+        price: item[4] || "",
+        additionalNotes: item[5] || "",
+      })
+    }
   })
+  return menuMap
 }

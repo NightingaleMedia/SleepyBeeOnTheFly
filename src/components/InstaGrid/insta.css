@@ -1,3 +1,41 @@
+@keyframes instaloading {
+  0% {
+    opacity: 0;
+    background: rgb(208, 208, 208);
+    background: linear-gradient(
+      90deg,
+      rgba(208, 208, 208, 1) 0%,
+      rgba(248, 248, 248, 1) 100%
+    );
+  }
+  80% {
+    background: rgb(208, 208, 208);
+    background: linear-gradient(
+      90deg,
+      rgba(208, 208, 208, 1) 100%,
+      rgba(248, 248, 248, 1) 100%
+    );
+  }
+  90% {
+    background: rgb(208, 208, 208);
+    background: linear-gradient(
+      90deg,
+      rgba(208, 208, 208, 1) 30%,
+      rgba(248, 248, 248, 1) 100%
+    );
+  }
+  100% {
+    background: rgb(208, 208, 208);
+    background: linear-gradient(
+      90deg,
+      rgba(208, 208, 208, 1) 0%,
+      rgba(248, 248, 248, 1) 100%
+    );
+
+    border-radius: 0;
+  }
+}
+
 .insta-image {
   margin: auto;
   height: 370px;
@@ -13,4 +51,17 @@ p.insta-caption {
   max-width: 300px;
 
   color: gray;
+}
+
+.loading-insta {
+  background-color: #181818;
+  animation: instaloading 1.5s infinite;
+  transition: all 0.2s ease;
+}
+
+@media all and (max-width: 500px) {
+  .insta-image {
+    width: 300px;
+    height: 300px;
+  }
 }

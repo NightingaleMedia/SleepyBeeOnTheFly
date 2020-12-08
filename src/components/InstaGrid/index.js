@@ -1,10 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
+import styled from "styled-components"
 import Img from "gatsby-image"
 import "./insta.css"
 import { Container, Row, Col } from "react-bootstrap"
 
+const InstaImg = styled(Img)``
 const InstaGrid = props => {
   const { allInstaNode } = useStaticQuery(
     graphql`
@@ -12,6 +14,7 @@ const InstaGrid = props => {
         allInstaNode(limit: 9, sort: { fields: timestamp, order: DESC }) {
           edges {
             node {
+              id
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 800, maxHeight: 800, quality: 100) {
@@ -39,8 +42,10 @@ const InstaGrid = props => {
           {allInstaNode.edges.map(img => (
             <Col lg={4}>
               <Img
-                style={{ borderRadius: "3wpx" }}
+                key={img.node.id}
+                style={{ borderRadius: "3px" }}
                 className="insta-image"
+                placeholderClassName="loading-insta"
                 fluid={img.node.localFile.childImageSharp.fluid}
               />
 

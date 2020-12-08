@@ -117,7 +117,7 @@ const Splash = props => {
         <div className="triangle1" />
       </Col> */}
       <div className="logo-holder">
-        <LandingLogo top={laxTop} />
+        <LandingLogo top={laxTop} onLoad={() => props.changeLoading(false)} />
       </div>
       <ButtonHolder className={fixedNav ? "after-scroll" : ""}>
         <Button

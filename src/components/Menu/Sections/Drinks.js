@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const Drinks = ({ data, open, toggleOpen }) => {
-  // return <p>{JSON.stringify(data)}</p>
   return (
     <div
       className={`section--dinein menu-section ${open ? "open" : "mini-menu"}`}

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const CarryOut = ({ data, open, toggleOpen }) => {
+const CarryOutSec = ({ data, open, toggleOpen }) => {
   return (
     <div
       className={`section--dinein menu-section  ${open ? "open" : "mini-menu"}`}
@@ -45,6 +45,4 @@ const CarryOut = ({ data, open, toggleOpen }) => {
   )
 }
 
-CarryOut.propTypes = {}
-
-export default CarryOut
+export default CarryOutSec

@@ -26,7 +26,7 @@ const LandingLogo = props => {
       placeholderImage: file(relativePath: { eq: "logo-landing.png" }) {
         childImageSharp {
           fluid(maxWidth: 550) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
@@ -39,7 +39,12 @@ const LandingLogo = props => {
 
   return (
     <div style={{ marginTop: props.top + "px" }}>
-      <Logo fluid={data.placeholderImage.childImageSharp.fluid} fadeIn={true} />
+      <Logo
+        fluid={data.placeholderImage.childImageSharp.fluid}
+        fadeIn={false}
+        loading="eager"
+        onLoad={props.onLoad}
+      />
     </div>
   )
 }
