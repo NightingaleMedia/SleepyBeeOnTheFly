@@ -4,7 +4,7 @@ import justBee from "../../images/just-bee.png"
 import "./loading.css"
 const Loading = ({ message, children }) => {
   return (
-    <div class="preloader">
+    <div className="preloader">
       <img className="loading-message" src={justBee}></img>
       <p>{message}</p>
       {children}

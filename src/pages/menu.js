@@ -1,13 +1,11 @@
 /* global gapi */
 import React, { useEffect, useRef, useState } from "react"
-import { readString } from "react-papaparse"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import Loading from "../components/Loading"
 import Menu from "../components/Menu/"
 import config from "../components/Menu/config"
 import logo from "../images/logo-landing.png"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
 import { getCarryOut, getDrinks, load, mapItems } from "../utils/spreadsheet"

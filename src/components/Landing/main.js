@@ -57,13 +57,13 @@ export default props => (
           <Col md={6}>
             <div className="main-inner">
               <iframe
+                title="google-maps-sleepybeeonthefly"
                 width="100%"
                 height="600"
-                frameborder="0"
+                frameBorder="0"
                 style={{ border: "0" }}
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD_xrL9e1VO7FrrfjDEXKrIRM0IYUxO4qo
     &q=Sleepy+bee+on+the+fly,Cincinnati+OH"
-                allowfullscreen
               ></iframe>
             </div>
           </Col>

@@ -1,10 +1,8 @@
 import React, { useState } from "react"
-
 import { Button } from "react-bootstrap"
 import Layout from "../components/layout"
-
 import Splash from "../components/Landing/splash"
-import Banner from "../components/Landing/Banner"
+import Banner from "../components/Landing/banner"
 import Main from "../components/Landing/Main"
 import InstaGrid from "../components/InstaGrid"
 import Loading from "../components/Loading"
