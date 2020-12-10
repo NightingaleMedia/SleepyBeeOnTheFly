@@ -109,14 +109,14 @@ const Footer = () => {
           {/* <h4>How To Project Videos</h4> */}
           <FooterLink2
             className="footer-link"
-            to="https://www.sleepybeecafe.com/jobs"
+            href="https://www.sleepybeecafe.com/jobs"
           >
             Employment
             <span></span>
           </FooterLink2>
           <FooterLink2
             className="footer-link"
-            to="https://www.google.com/maps?ll=39.1435,-84.499686&z=17&t=m&hl=en-US&gl=US&mapclient=embed&daddr=Sleepy+Bee+On+The+Fly+3440+Burnet+Ave+Cincinnati,+OH+45229@39.1435003,-84.4996864"
+            href="https://www.google.com/maps?ll=39.1435,-84.499686&z=17&t=m&hl=en-US&gl=US&mapclient=embed&daddr=Sleepy+Bee+On+The+Fly+3440+Burnet+Ave+Cincinnati,+OH+45229@39.1435003,-84.4996864"
           >
             Directions
             <span></span>

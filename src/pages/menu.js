@@ -47,51 +47,55 @@ const MenuPage = props => {
       return { ...prev, bothSectionsClosed: bool }
     })
   }
-  const onLoad = (packet, error, callback) => {
-    console.log("onload ", packet)
-    let new_data = data
-    if (!packet) {
-      console.log("error", error)
-      setLoading({ loading: true, message: "failed to load" })
-    } else {
-      new_data[packet.section] = mapItems(packet)
-      setData({ ...data, ...new_data })
-    }
-  }
+  // const onLoad = (packet, error, callback) => {
+  //   console.log("onload ", packet)
+  //   let new_data = data
+  //   if (!packet) {
+  //     console.log("error", error)
+  //     setLoading({ loading: true, message: "failed to load" })
+  //   } else {
+  //     new_data[packet.section] = mapItems(packet)
+  //     setData({ ...data, ...new_data })
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   setLoading({ loading: true, message: "getting menu data..." })
+  //   gapi.load("client:auth2", () => {
+  //     // 2. Initialize the JavaScript client library.
+  //     gapi.client
+  //       .init({
+  //         apiKey: config.apiKey,
+  //         clientId: config.CLIENT_ID,
+  //         discoveryDocs: config.discoveryDocs,
+  //         scope: config.SCOPES,
+  //         // Your API key will be automatically added to the Discovery Document URLs.
+  //       })
+  //       .then(() => {
+  //         // 3. Initialize and make the API request.
+  //         getCarryOut(onLoad)
+  //         getDrinks(onLoad)
+  //       })
+  //   })
+  // }, [])
+
+  // useEffect(() => {
+  //   if (data.Drinks.length > 0 && data.Carryout.length > 0) {
+  //     setLoading({ loading: false, message: "" })
+  //   }
+  // }, [data.Drinks, data.Carryout])
 
   useEffect(() => {
-    setLoading({ loading: true, message: "getting menu data..." })
-    gapi.load("client:auth2", () => {
-      // 2. Initialize the JavaScript client library.
-      gapi.client
-        .init({
-          apiKey: config.apiKey,
-          clientId: config.CLIENT_ID,
-          discoveryDocs: config.discoveryDocs,
-          scope: config.SCOPES,
-          // Your API key will be automatically added to the Discovery Document URLs.
-        })
-        .then(() => {
-          // 3. Initialize and make the API request.
-          getCarryOut(onLoad)
-          getDrinks(onLoad)
-        })
-    })
-  }, [])
-
-  useEffect(() => {
-    if (data.Drinks.length > 0 && data.Carryout.length > 0) {
-      setLoading({ loading: false, message: "" })
-    }
-  }, [data.Drinks, data.Carryout])
-
-  useEffect(() => {
+    const interval = setTimeout(() => {
+      setLoading(false)
+    }, 1200)
     document.addEventListener("scroll", () => {
       if (window.scrollY > 10) {
         collapseMenu()
       }
     })
     return () => {
+      clearInterval(interval)
       document.removeEventListener("scroll", this)
     }
   }, [])
@@ -135,7 +139,6 @@ const MenuPage = props => {
               expandHeader={() => expandHeader()}
               collapseHeader={() => collapseMenu()}
               loading={loading}
-              data={data}
             ></Menu>
           </Wrap>
         </>

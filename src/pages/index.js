@@ -25,19 +25,6 @@ const IndexPage = props => {
     <Layout>
       {loading.loading ? <Loading message={loading.message}></Loading> : ""}
       <>
-        <Banner>
-          In the wrong place? Looking for
-          <Button
-            size="sm"
-            variant="outline-dark"
-            onClick={() => {
-              window.location.href = "https://www.sleepybeecafe.com/"
-            }}
-          >
-            Sleepy Bee Cafe
-          </Button>
-          ?
-        </Banner>
         <Splash changeLoading={changeLoading} />
         <Main mainHeight={mainHeight} />
         <InstaGrid />
