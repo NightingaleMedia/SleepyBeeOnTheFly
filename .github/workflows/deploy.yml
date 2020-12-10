@@ -1,0 +1,54 @@
+# https://t.hegu.it/deploy-on-ftp-with-github-actions/
+name: Node CI
+on:
+  push:
+    branches:
+      - production
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build
+        run: |
+          npm ci
+          npm run build --if-present --prefix-paths
+        env:
+          NODE_ENV: development
+          ENV: development
+          SHOP_NAME: make-glass-have-fun
+          ACCESS_TOKEN: 54b7ec3be5fcd8d5ac93a55096e85c85
+          TYPEKIT_ID: jtg0pti
+          BOOK_THAT_TOKEN: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjQzNTIsInNob3AiOiJtYWtlLWdsYXNzLWhhdmUtZnVuIn0.JlyBDiBNp-GURPceBwv2ZkczilEWQlg6VpoSi-edlK8
+      - name: Upload public dir
+        uses: actions/upload-artifact@v1
+        with:
+          name: public
+          path: public
+        env:
+          CI: true
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Download public dir
+        uses: actions/download-artifact@v1
+        with:
+          name: public
+      - name: Upload ftp
+        uses: sebastianpopp/ftp-action@releases/v1
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: "public"
+          remoteDir: "/"
