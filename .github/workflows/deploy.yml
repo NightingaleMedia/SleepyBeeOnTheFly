@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - production
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    # this should make it run on every sunday
+    - cron: "0 0 * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,12 +25,8 @@ jobs:
           npm ci
           npm run build --if-present --prefix-paths
         env:
-          NODE_ENV: development
-          ENV: development
-          SHOP_NAME: make-glass-have-fun
-          ACCESS_TOKEN: 54b7ec3be5fcd8d5ac93a55096e85c85
-          TYPEKIT_ID: jtg0pti
-          BOOK_THAT_TOKEN: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjQzNTIsInNob3AiOiJtYWtlLWdsYXNzLWhhdmUtZnVuIn0.JlyBDiBNp-GURPceBwv2ZkczilEWQlg6VpoSi-edlK8
+          NODE_ENV: production
+          ENV: production
       - name: Upload public dir
         uses: actions/upload-artifact@v1
         with:
