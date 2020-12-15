@@ -41,6 +41,7 @@
   height: 370px;
   width: 370px;
   margin-top: 1.75rem;
+  z-index: 99;
 }
 p.insta-caption {
   margin: auto;
@@ -55,8 +56,9 @@ p.insta-caption {
 
 .loading-insta {
   background-color: #181818;
-  animation: instaloading 1.5s infinite;
+  animation: instaloading 2s infinite;
   transition: all 0.2s ease;
+  z-index: 100;
 }
 
 @media all and (max-width: 500px) {

@@ -18,7 +18,7 @@ const InstaGrid = props => {
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 800, maxHeight: 800, quality: 100) {
-                    ...GatsbyImageSharpFluid_withWebp
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
               }
@@ -44,8 +44,8 @@ const InstaGrid = props => {
               <Img
                 style={{ borderRadius: "3px" }}
                 alt={img.node.caption}
-                className="insta-image"
                 placeholderClassName="loading-insta"
+                className="insta-image"
                 fluid={img.node.localFile.childImageSharp.fluid}
               />
 
