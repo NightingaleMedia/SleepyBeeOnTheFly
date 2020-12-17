@@ -15,6 +15,7 @@ import "./bootstrap.min.css"
 import "./normalize.css"
 import "./global.css"
 import { Helmet } from "react-helmet"
+import { GlobalStyle } from "../utils/styles"
 
 const Wrap = styled.div`
   min-height: 100vh;
@@ -41,6 +42,7 @@ const Layout = ({ children }) => {
       <Header
         siteTitle={data.site.siteMetadata?.title || `Sleepy Bee On The Fly`}
       />
+      <GlobalStyle />
 
       {children}
       <Footer />

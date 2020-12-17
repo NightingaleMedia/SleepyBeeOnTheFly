@@ -19,9 +19,9 @@
   --downtown-dark: #6e024a;
   --blueash-dark: #007ab8;
   --oakley-dark: #2b9d45;
-  --sb-font1: Questa-slab, serif;
-  --sb-font2: Questa-slab, sans-serif;
-  --sb-font-foco: Foco, sans-serif;
+  --sb-font1: questa-slab, serif;
+  --sb-font2: questa-slab, sans-serif;
+  --sb-font-foco: foco, sans-serif;
   --sb-grey: #58575a;
   --mini-menu-size: 50px;
 }
@@ -32,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Questa-Slab;
+  font-family: questa-slab;
   color: white;
   font-size: 4rem;
   line-height: auto;

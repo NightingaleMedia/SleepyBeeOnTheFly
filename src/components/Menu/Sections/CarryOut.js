@@ -16,7 +16,12 @@ const CarryOutSec = ({ data, open, toggleOpen }) => {
             return (
               <React.Fragment key={item.title}>
                 <div className="menu-content--header">{item.title}</div>
-                <div className="menu-content--header-description">
+                <div
+                  className="menu-content--header-description"
+                  // dangerouslySetInnerHTML={{
+                  //   __html: `${item.description.replace(/\•/g, "<br />")}`,
+                  // }}
+                >
                   {item.description}
                 </div>
               </React.Fragment>
@@ -34,8 +39,21 @@ const CarryOutSec = ({ data, open, toggleOpen }) => {
                   ))}
                 </div>
                 <div className="menu-item--description">{item.description}</div>
-                <div className="menu-item--price"> {item.price}</div>
-                <div className="menu-item--notes">{item.additionalNotes}</div>
+                <div
+                  className="menu-item--price"
+                  dangerouslySetInnerHTML={{
+                    __html: `${item.price.replace(/\|/g, "<br />")}`,
+                  }}
+                ></div>
+                <div
+                  className="menu-item--notes"
+                  dangerouslySetInnerHTML={{
+                    __html: `${item.additionalNotes.replace(
+                      /\|/g,
+                      "<span></span>"
+                    )}`,
+                  }}
+                ></div>
               </article>
             )
           }

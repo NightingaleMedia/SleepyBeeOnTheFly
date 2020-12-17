@@ -33,7 +33,12 @@ const Drinks = ({ data, open, toggleOpen }) => {
                     ></span>
                   ))}
                 </div>
-                <div className="menu-item--description">{item.description}</div>
+                <div
+                  className="menu-item--description"
+                  dangerouslySetInnerHTML={{
+                    __html: `${item.description.replace(/\|/g, "<br />")}`,
+                  }}
+                ></div>
                 <div className="menu-item--price"> {item.price}</div>
                 <div className="menu-item--notes">{item.additionalNotes}</div>
               </article>

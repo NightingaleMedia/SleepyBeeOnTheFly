@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
 
 import { navigate } from "gatsby"
+import "../components/Menu/style.css"
 
 const Wrap = styled.div`
   min-height: 100vh;
@@ -83,7 +84,7 @@ const MenuPage = props => {
               className="menu-logo"
               onClick={() => navigate("/")}
             />
-            <h1>Our Menu</h1>
+            <h1 style={{ fontSize: "2.25rem" }}>Our Menu</h1>
             <span className="scroll-down" onClick={() => scrollAndOpen()}>
               <FontAwesomeIcon className="pulse" icon={faChevronCircleDown} />
             </span>

@@ -15,10 +15,9 @@
 }
 
 h1 {
-  font-family: var(--sb-font1), sans-serif;
-  font-weight: 200;
-  font-size: 1.5em;
-  margin-top: 1em;
+  font-family: questa-slab, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
   color: var(--sb-blue--dark);
 }
 .order-now {
@@ -92,7 +91,7 @@ h1 {
 }
 
 .location > h3 {
-  font-family: var(--sb-font1);
+  font-family: questa-slab, serif;
   font-weight: 100;
   line-height: 1.25em;
 }
@@ -384,6 +383,7 @@ div.menu-section.open {
 
 .menu-content--header {
   padding-top: 10px;
+  margin-bottom: 0.5rem;
   height: 50px;
   position: sticky;
   top: 54px;
@@ -408,6 +408,7 @@ article {
 .menu-item--title {
   font-size: 1.25em;
   font-weight: 800;
+  margin-bottom: 0.25rem;
 }
 
 .menu-item--title > span,
