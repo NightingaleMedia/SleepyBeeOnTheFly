@@ -40,12 +40,15 @@ const InstaGrid = props => {
             </center>
           </Col>
           {allInstaNode.edges.map(img => (
-            <Col key={img.node.id} lg={4}>
+            <Col
+              key={img.node.id}
+              lg={4}
+              onClick={() =>
+                navigate("https://www.instagram.com/sleepybeeonthefly/")
+              }
+            >
               <Img
-                onClick={() =>
-                  navigate("https://www.instagram.com/sleepybeeonthefly/")
-                }
-                style={{ borderRadius: "3px" }}
+                style={{ borderRadius: "3px", cursor: "pointer" }}
                 alt={img.node.caption}
                 placeholderClassName="loading-insta"
                 className="insta-image"

@@ -35,6 +35,15 @@ const Banner = styled.div`
     color: var(--sb-yellow--med);
     cursor: pointer;
   }
+  && span {
+    /* color: black; */
+    font-weight: 600;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  && span.u {
+    text-decoration: underline;
+  }
 `
 
 export default props => (

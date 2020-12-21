@@ -42,10 +42,16 @@
   "SectionTitle,Title,DietaryNotes,Description,Price,AdditionalNotes,menuItem": "Tea By the Pot,,,,,,"
  },
  {
-  "SectionTitle,Title,DietaryNotes,Description,Price,AdditionalNotes,menuItem": ",Bee Team Blends,,\"Dandelion $4.00, Peppermint Chocolate Mate $4.00, Peppermint $4.00, Chaga with Orange & Licorice $5.00\",,,TRUE"
+  "SectionTitle,Title,DietaryNotes,Description,Price,AdditionalNotes,menuItem": ",Bee Team Blends,,Dandelion $4.00 | Peppermint Chocolate Mate $4.00 | Peppermint $4.00 | Chaga with Orange & Licorice $5.00,,,TRUE"
  },
  {
-  "SectionTitle,Title,DietaryNotes,Description,Price,AdditionalNotes,menuItem": ",Wendigo Teas,,\"Earl Grey $4.00, Green Tea $4.00, Siren Throat Coat $5.00\rFireBird Chai $5.00\r\",,,TRUE"
+  "SectionTitle,Title,DietaryNotes,Description,Price,AdditionalNotes,menuItem": ",Wendigo Teas,,\"Earl Grey $4.00 | Green Tea $4.00 | Siren Throat Coat $5.00"
+ },
+ {
+  "SectionTitle,Title,DietaryNotes,Description,Price,AdditionalNotes,menuItem": "| FireBird Chai $5.00"
+ },
+ {
+  "SectionTitle,Title,DietaryNotes,Description,Price,AdditionalNotes,menuItem": "\",,,TRUE"
  },
  {
   "SectionTitle,Title,DietaryNotes,Description,Price,AdditionalNotes,menuItem": "Stingers & Mimosas,,,,,,"

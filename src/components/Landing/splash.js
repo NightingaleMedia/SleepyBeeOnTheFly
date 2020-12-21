@@ -4,6 +4,7 @@ import { Button, Col } from "react-bootstrap"
 import styled from "styled-components"
 import LandingLogo from "./landingLogo"
 import bg from "../../images/splash-desktop.png"
+import banner from "./banner"
 const SplashPage = styled.div`
   background-image: url(${bg});
   background-position: center center;
@@ -140,7 +141,7 @@ const Splash = props => {
           Cincinnati, OH 45229 <br />
           <strong>(513) 221-1307 </strong>
           <br />
-          Mon - Sun : 8:00am - 3:00pm
+          Tue - Sun : 8:00am - 2:00pm
         </p>
       </div>
     </SplashPage>
