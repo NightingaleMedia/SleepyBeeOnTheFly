@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import "./insta.css"
@@ -42,6 +42,9 @@ const InstaGrid = props => {
           {allInstaNode.edges.map(img => (
             <Col key={img.node.id} lg={4}>
               <Img
+                onClick={() =>
+                  navigate("https://www.instagram.com/sleepybeeonthefly/")
+                }
                 style={{ borderRadius: "3px" }}
                 alt={img.node.caption}
                 placeholderClassName="loading-insta"

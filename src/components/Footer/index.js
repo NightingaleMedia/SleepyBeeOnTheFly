@@ -139,13 +139,15 @@ const Footer = () => {
       <div className="footer--bottom">
         <div className="footer--end">
           <MyFontAwesomeIcon
-            onClick={() => navigate("https://www.facebook.com/glassroom.us")}
+            onClick={() =>
+              navigate("https://www.facebook.com/sleepybeeonthefly")
+            }
             icon={faFacebookSquare}
           />
 
           <MyFontAwesomeIcon
             onClick={() =>
-              navigate("https://www.instagram.com/glassroomart.us/")
+              navigate("https://www.instagram.com/sleepybeeonthefly/")
             }
             icon={faInstagramSquare}
           />
