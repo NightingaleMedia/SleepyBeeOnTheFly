@@ -137,7 +137,7 @@ const Splash = props => {
       </ButtonHolder>
       <div className="splash-under">
         <p style={{ lineHeight: "30px" }}>
-          3440 Burnet Ave, Ste 100 <br />
+          3440 Burnet Ave <br />
           Cincinnati, OH 45229 <br />
           <strong>(513) 221-1307 </strong>
           <br />
