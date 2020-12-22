@@ -42,7 +42,7 @@ const InstaGrid = props => {
           {allInstaNode.edges.map(img => (
             <Col
               key={img.node.id}
-              lg={4}
+              md={4}
               onClick={() =>
                 navigate("https://www.instagram.com/sleepybeeonthefly/")
               }

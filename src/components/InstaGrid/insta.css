@@ -65,8 +65,14 @@ p.insta-caption {
   transition: all 0.2s ease;
   z-index: 100;
 }
+@media all and (max-width: 1024px) {
+  .insta-image {
+    width: inherit;
+    height: auto;
+  }
+}
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 768px) {
   .insta-image {
     width: 300px;
     height: 300px;

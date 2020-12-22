@@ -9,15 +9,13 @@ const BannerWrap = styled.div`
 
 const Banner = styled.div`
   position: sticky;
-  display: flex;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  padding-top: 15px;
   top: -1px;
   width: 100%;
   height: 50px;
   margin-bottom: 70vh;
-  font-size: 100%;
+  font-size: 90%;
   line-height: auto;
   color: white;
   font-family: Foco;
@@ -43,6 +41,12 @@ const Banner = styled.div`
   }
   && span.u {
     text-decoration: underline;
+  }
+  @media all and (max-width: 1024px) {
+    padding: 10px;
+    text-align: center;
+    height: 80px;
+    font-size: 0.75rem;
   }
 `
 
