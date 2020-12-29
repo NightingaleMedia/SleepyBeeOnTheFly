@@ -25,12 +25,12 @@ const IndexPage = props => {
     <Layout>
       {loading.loading ? <Loading message={loading.message}></Loading> : ""}
       <>
-        <Banner>
+        {/* <Banner>
           We will be hibernating through<span> December 28th</span> and back
           open with our new winter hours of
           <span className="u"> Tuesday - Sunday 8:00am - 2:00pm </span>
           starting the 29th
-        </Banner>
+        </Banner> */}
         <Splash changeLoading={changeLoading} />
         <Main mainHeight={mainHeight} />
         <InstaGrid />
