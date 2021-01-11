@@ -15,7 +15,7 @@ const IndexPage = props => {
   })
 
   const changeLoading = value => {
-    console.log("changing loading")
+    console.log("still loading...")
     const loading = { ...loading }
     loading.loading = value
     setLoading(loading)
