@@ -1,9 +1,6 @@
 # https://t.hegu.it/deploy-on-ftp-with-github-actions/
 name: Cron Production
 on:
-  push:
-    branches:
-      - production
   schedule:
     # * is a special character in YAML so you have to quote this string
     # this should make it run on every day
