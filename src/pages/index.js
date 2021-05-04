@@ -11,7 +11,7 @@ const IndexPage = props => {
   const [mainHeight, setMainHeight] = useState(25)
   const [loading, setLoading] = useState({
     loading: true,
-    message: "loading...",
+    message: "loading....",
   })
 
   const changeLoading = value => {
