@@ -30,8 +30,8 @@ const InstaGrid = props => {
     `
   )
   return (
-    <section>
-      <Container style={{ maxWidth: "1200px" }}>
+    <section style={{ zIndex: "101" }}>
+      <Container style={{ maxWidth: "1200px", zIndex: "101" }}>
         <Row>
           <Col md={12}>
             <center>

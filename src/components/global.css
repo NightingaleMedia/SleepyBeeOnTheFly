@@ -74,3 +74,15 @@ section {
 .white {
   color: #ffffff;
 }
+
+button {
+  border: none;
+  background-color: #007ab8;
+  color: white;
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 1rem;
+  display: block;
+  margin: 1rem auto;
+  cursor: pointer;
+}

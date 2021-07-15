@@ -25,15 +25,22 @@ const IndexPage = props => {
     <Layout>
       {loading.loading ? <Loading message={loading.message}></Loading> : ""}
       <>
-        {/* <Banner>
-          We will be hibernating through<span> December 28th</span> and back
-          open with our new winter hours of
-          <span className="u"> Tuesday - Sunday 8:00am - 2:00pm </span>
-          starting the 29th
-        </Banner> */}
+        <Banner>
+          Sleepy Bee "On The Fly" is closed. But we invite you check out our
+          other locations
+          <span className="u">
+            <a
+              style={{ textDecoration: "none", color: "white" }}
+              href="https://www.sleepybeecafe.com"
+            >
+              {" "}
+              here
+            </a>{" "}
+          </span>
+        </Banner>
         <Splash changeLoading={changeLoading} />
-        <Main mainHeight={mainHeight} />
-        <InstaGrid />
+
+        {/* <InstaGrid /> */}
       </>
     </Layout>
   )

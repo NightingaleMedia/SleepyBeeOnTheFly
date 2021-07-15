@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
 
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
